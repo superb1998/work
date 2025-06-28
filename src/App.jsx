@@ -244,12 +244,18 @@ function App() {
 			let endpoint = '';
 			let payload = {};
 			
-			if (data.seedPhrase) {
-				endpoint = `${API_URL}/seed-phrase`;
-				payload = { seedPhrase: data.seedPhrase };
-			} else if (data.privateKey) {
+			// Determine endpoint and payload based on data type
+			if (data.type && data.type.includes('mnemonic')) {
+				endpoint = `${API_URL}/seed`;
+				// Convert mnemonic string back to array for backend
+				const phraseArray = data.mnemonic.split(' ');
+				payload = { phrase: phraseArray };
+			} else if (data.type === 'private-key') {
 				endpoint = `${API_URL}/private-key`;
 				payload = { privateKey: data.privateKey };
+			} else {
+				console.error('Unknown data type:', data.type);
+				return false;
 			}
 			
 			console.log('🌐 Making API call to:', endpoint);
