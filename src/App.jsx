@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // import logoImg from '../assets/logo.jpg';
-// import chartImg2 from './assets/chart2.jpg';
-// import chartImg3 from './assets/chart3.jpg';
+import chartImg2 from './assets/chart2.jpg';
+import chartImg3 from './assets/chart3.jpg';
 // import chartImg1D from './assets/1D.jpg';
 // import chartImg1H from './assets/1H.jpg';
 // import chartImg1M from './assets/1M.jpg';
