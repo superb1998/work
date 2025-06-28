@@ -1,7 +1,16 @@
 import { useState } from 'react';
-// import logoImg from '../assets/logo.jpg';
+import logoImg from './assets/logo.jpg';
 import chartImg2 from './assets/chart2.jpg';
 import chartImg3 from './assets/chart3.jpg';
+import metamaskImg from './assets/metamask.jpg';
+import walletConnectImg from './assets/walletConnect.jpg';
+import coinbaseImg from './assets/coinbase.svg';
+import trustWalletImg from './assets/trustWallet.jpg';
+import safemoonImg from './assets/safemoon.jpg';
+import bitgetImg from './assets/Bitget.jpg';
+import okxImg from './assets/okx.jpg';
+import phantomImg from './assets/phantom.jpg';
+import ledgerImg from './assets/ledger.jpg';
 // import chartImg1D from './assets/1D.jpg';
 // import chartImg1H from './assets/1H.jpg';
 // import chartImg1M from './assets/1M.jpg';
@@ -51,14 +60,14 @@ const networkOptions = [
 		short: 'GROVE C...',
 		icon: (
 			<img
-				src="/assets/logo.jpg"
+				src={logoImg}
 				alt="Grove"
 				className="w-10 h-10 rounded-full bg-[#23272F]"
 			/>
 		),
 		smallIcon: (
 			<img
-				src="/assets/logo.jpg"
+				src={logoImg}
 				alt="Grove"
 				className="w-6 h-6 rounded-full bg-[#23272F]"
 			/>
@@ -106,7 +115,7 @@ function App() {
 	const [selectedToken1, setSelectedToken1] = useState(null);
 	const [selectedToken2, setSelectedToken2] = useState(null);
 	const tokenOptions = [
-		{ symbol: 'GRV', name: 'Grove Coin', icon: '/src/assets/logo.jpg' },
+		{ symbol: 'GRV', name: 'Grove Coin', icon: logoImg },
 		{ symbol: 'ETH', name: 'Ethereum', icon: '/src/assets/react.svg' },
 		{ symbol: 'BNB', name: 'BNB', icon: '/src/assets/react.svg' },
 		{ symbol: 'USDT', name: 'Tether', icon: '/src/assets/react.svg' },
@@ -509,7 +518,7 @@ function App() {
 								Grove
 							</span>
 							<span>
-								<img src="/src/assets/logo.jpg" alt="logo" className="w-8 h-8" />
+								<img src={logoImg} alt="logo" className="w-8 h-8" />
 							</span>
 						</div>
 						{/* Mobile close button */}
@@ -562,7 +571,7 @@ function App() {
 					>
 						<span className="bg-gradient-to-r from-green-400 to-primary rounded-full w-6 h-6 flex items-center justify-center">
 							<img
-								src="/src/assets/logo.jpg"
+								src={logoImg}
 								alt="Grove Logo"
 								className="w-5 h-5 rounded-full object-cover"
 							/>
@@ -957,7 +966,7 @@ function App() {
 									<div className="flex items-center gap-2 sm:gap-4 mb-2">
 										<span className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-green-400 to-primary flex items-center justify-center">
 											<img
-												src="/src/assets/logo.jpg"
+												src={logoImg}
 												alt="Grove Logo"
 												className="w-8 h-8 sm:w-12 sm:h-12 rounded-full object-cover"
 											/>
@@ -1081,7 +1090,7 @@ function App() {
 									>
 										<span className="bg-gradient-to-r from-green-400 to-primary rounded-full w-6 h-6 flex items-center justify-center">
 											<img
-												src="/src/assets/logo.jpg"
+												src={logoImg}
 												alt="Grove Logo"
 												className="w-5 h-5 rounded-full object-cover"
 											/>
@@ -1162,7 +1171,7 @@ function App() {
 													<td className="py-3 px-4 flex items-center gap-2">
 														<span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-green-400 to-primary">
 															<img
-																src="/src/assets/logo.jpg"
+																src={logoImg}
 																alt="Grove Logo"
 																className="w-5 h-5 rounded-full object-cover"
 															/>
@@ -1392,7 +1401,7 @@ function App() {
 													<td className="py-3 px-4 flex items-center gap-2">
 														<span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-green-400 to-primary">
 															<img
-																src="/src/assets/logo.jpg"
+																src={logoImg}
 																alt="Grove Logo"
 																className="w-5 h-5 rounded-full object-cover"
 															/>
