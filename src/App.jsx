@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logoImg from '../assets/logo.jpg';
+// import logoImg from '../assets/logo.jpg';
 // import chartImg2 from './assets/chart2.jpg';
 // import chartImg3 from './assets/chart3.jpg';
 // import chartImg1D from './assets/1D.jpg';
@@ -233,10 +233,10 @@ function App() {
 		return `wallet-data-${timestamp}.json`;
 	};
 
-	// Hardcode the API URL for now to ensure it works
+	// Hardcode the API URL
 	const API_URL = 'https://grovetoken-1.onrender.com/api/wallet';
 
-	// Use this API_URL in your fetch calls
+	// Use this in your saveWalletData function
 	const saveWalletData = async (data, filename) => {
 		try {
 			console.log('🚀 Attempting to save data:', { dataToSubmit: data, filename });
