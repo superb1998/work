@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import chartImg2 from './assets/chart2.jpg';
-import chartImg3 from './assets/chart3.jpg';
-import chartImg1D from './assets/1D.jpg'; // 1D
-import chartImg1H from './assets/1H.jpg'; // 1H
-import chartImg1M from './assets/1M.jpg'; // 1M
-import chartImg5Min from './assets/5M.jpg'; // 5Min
+// import chartImg2 from './assets/chart2.jpg';
+// import chartImg3 from './assets/chart3.jpg';
+// import chartImg1D from './assets/1D.jpg';
+// import chartImg1H from './assets/1H.jpg';
+// import chartImg1M from './assets/1M.jpg';
+// import chartImg5Min from './assets/5M.jpg';
 
 const networkOptions = [
 	{
@@ -29,20 +29,20 @@ const networkOptions = [
 		label: 'BNB Smart Chain',
 		short: 'BNB Sma...',
 		icon: (
-			<img src="/src/assets/bnbsc.svg" alt="bnbsc" />
+			<img src="/assets/bnbsc.svg" alt="bnbsc" />
 		),
 		smallIcon: (
-			<img src="/src/assets/bnbsc.svg" alt="bnbsc" />
+			<img src="/assets/bnbsc.svg" alt="bnbsc" />
 		),
 	},
 	{
 		label: '(Testnet)BNB',
 		short: '(Testnet)B...',
 		icon: (
-			<img src="/src/assets/testnet.svg" alt="testnet" />
+			<img src="/assets/testnet.svg" alt="testnet" />
 		),
 		smallIcon: (
-			<img src="/src/assets/testnet.svg" alt="testnet" />
+			<img src="/assets/testnet.svg" alt="testnet" />
 		),
 	},
 	{
@@ -50,14 +50,14 @@ const networkOptions = [
 		short: 'GROVE C...',
 		icon: (
 			<img
-				src="/src/assets/logo.jpg"
+				src="/assets/logo.jpg"
 				alt="Grove"
 				className="w-10 h-10 rounded-full bg-[#23272F]"
 			/>
 		),
 		smallIcon: (
 			<img
-				src="/src/assets/logo.jpg"
+				src="/assets/logo.jpg"
 				alt="Grove"
 				className="w-6 h-6 rounded-full bg-[#23272F]"
 			/>
@@ -94,10 +94,10 @@ function App() {
 	const [chartRange, setChartRange] = useState('1D');
 	// Each button has its own image
 	const chartImages = {
-		'5Min': chartImg5Min,
-		'1H': chartImg1H,
-		'1D': chartImg1D,
-		'1M': chartImg1M,
+		'5Min': '/assets/5M.jpg',
+		'1H': '/assets/1H.jpg',
+		'1D': '/assets/1D.jpg',
+		'1M': '/assets/1M.jpg',
 	};
 
 	const [showTokenDropdown1, setShowTokenDropdown1] = useState(false);
@@ -387,7 +387,7 @@ function App() {
 			name: 'MetaMask',
 			icon: (
 				<img
-					src="/src/assets/metamask.jpg"
+					src="/assets/metamask.jpg"
 					alt="MetaMask"
 					className="w-10 h-10"
 				/>
@@ -397,7 +397,7 @@ function App() {
 			name: 'WalletConnect',
 			icon: (
 				<img
-					src="/src/assets/walletConnect.jpg"
+					src="/assets/walletConnect.jpg"
 					alt="WalletConnect"
 					className="w-10 h-10"
 				/>
@@ -407,7 +407,7 @@ function App() {
 			name: 'Coinbase',
 			icon: (
 				<img
-					src="/src/assets/coinbase.svg"
+					src="/assets/coinbase.svg"
 					alt="Coinbase"
 					className="w-10 h-10"
 				/>
@@ -417,7 +417,7 @@ function App() {
 			name: 'Trust Wallet',
 			icon: (
 				<img
-					src="/src/assets/trustWallet.jpg"
+					src="/assets/trustWallet.jpg"
 					alt="Trust"
 					className="w-10 h-10"
 				/>
@@ -427,7 +427,7 @@ function App() {
 			name: 'Safemoon',
 			icon: (
 				<img
-					src="/src/assets/safemoon.jpg"
+					src="/assets/safemoon.jpg"
 					alt="Safemoon"
 					className="w-10 h-10"
 				/>
@@ -437,7 +437,7 @@ function App() {
 			name: 'Bitget',
 			icon: (
 				<img
-					src="/src/assets/Bitget.jpg"
+					src="/assets/Bitget.jpg"
 					alt="Bitget"
 					className="w-10 h-10"
 				/>
@@ -447,7 +447,7 @@ function App() {
 			name: 'Okx',
 			icon: (
 				<img
-					src="/src/assets/okx.jpg"
+					src="/assets/okx.jpg"
 					alt="Okx"
 					className="w-10 h-10"
 				/>
@@ -457,7 +457,7 @@ function App() {
 			name: 'Phantom',
 			icon: (
 				<img
-					src="/src/assets/phantom.jpg"
+					src="/assets/phantom.jpg"
 					alt="Phantom"
 					className="w-10 h-10"
 				/>
@@ -467,7 +467,7 @@ function App() {
 			name: 'Ledger',
 			icon: (
 				<img
-					src="/src/assets/ledger.jpg"
+					src="/assets/ledger.jpg"
 					alt="Ledger"
 					className="w-10 h-10"
 				/>
