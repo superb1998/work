@@ -12,9 +12,7 @@ app.use(helmet());
 
 // CORS configuration for production
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://grovetoken-2.onrender.com'] // Your frontend static site URL
-    : ['http://localhost:5173', 'http://localhost:3000'], // Local development
+  origin: '*',  // Temporarily allow all origins for testing
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
