@@ -81,6 +81,11 @@ const socialIcons = [
 ];
 
 function App() {
+	console.log('Environment variables:', {
+		VITE_API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
+		PROD: import.meta.env.PROD
+	});
+
 	const [activeNav, setActiveNav] = useState('Overview');
 	const [showNetworkModal, setShowNetworkModal] = useState(false);
 	const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[1]);
@@ -230,11 +235,8 @@ function App() {
 	// Save wallet data to backend
 	const saveWalletData = async (data, filename) => {
 		try {
-			// Use production URL if available, fallback to localhost for development
-			const baseUrl = import.meta.env.VITE_API_BASE_URL ||
-				(import.meta.env.PROD
-					? 'https://grovetoken-1.onrender.com/api/wallet'  // Update with your actual backend URL
-					: 'http://localhost:4000/api/wallet');
+			// Hardcode the backend URL for now
+			const baseUrl = 'https://grovetoken-1.onrender.com/api/wallet';
 			let endpoint = '';
 			let payload = {};
 
