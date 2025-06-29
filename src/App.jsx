@@ -487,7 +487,7 @@ function App() {
 	];
 
 	return (
-		<div className="min-h-screen flex bg-[#0b1023] text-white font-sans">
+		<div className="min-h-screen flex bg-[#0b1023] text-white font-sans overflow-x-hidden">
             {/* Success Notification - Responsive positioning */}
             {showSuccessNotification && (
                 <div className="fixed top-4 right-4 md:top-8 md:right-8 z-[999] bg-green-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-2xl animate-pulse max-w-[calc(100vw-2rem)]">
@@ -592,7 +592,7 @@ function App() {
 			</aside>
 
 			{/* Main Content - Responsive */}
-			<div className="flex-1 flex flex-col min-h-screen max-h-screen overflow-y-auto lg:ml-0">
+			<div className="flex-1 flex flex-col min-h-screen overflow-y-auto lg:ml-0 w-full max-w-full">
 				{/* Header - Responsive */}
 				<header className="flex items-center justify-between lg:justify-end gap-2 md:gap-4 px-4 md:px-8 py-4 md:py-6 border-b border-[#1a2147] bg-[#01051e] sticky top-0 z-10">
 					{/* Mobile Menu Button */}
@@ -957,11 +957,11 @@ function App() {
 				)}
 
 				{/* Main Sections - Responsive */}
-				<main className="flex-1 p-4 sm:p-6 lg:p-8 bg-[#0b1023] overflow-y-auto">
+				<main className="flex-1 p-2 sm:p-4 lg:p-8 bg-[#0b1023] overflow-y-auto w-full max-w-full">
 					{activeNav === 'Overview' && (
 						<>
 							{/* Token Generator Banner - Responsive */}
-							<section className="bg-[#020827] border-4 sm:border-6 border-white rounded-xl p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row items-center justify-between mb-4">
+							<section className="bg-[#020827] border-2 sm:border-4 border-white rounded-xl p-3 sm:p-4 lg:p-6 flex flex-col lg:flex-row items-center justify-between mb-4 w-full max-w-full overflow-hidden">
 								<div>
 									<div className="flex items-center gap-2 sm:gap-4 mb-2">
 										<span className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-green-400 to-primary flex items-center justify-center">
@@ -1033,13 +1033,13 @@ function App() {
 							</section>
 
 							{/* GRV Price and Circulation Section */}
-							<div className="flex flex-row gap-155 mb-2 px-4 text-[14px] text-[#686e80]">
+							<div className="flex flex-row gap-4 sm:gap-8 mb-2 px-2 sm:px-4 text-xs sm:text-sm text-[#686e80] overflow-hidden">
 								<h1>GRV Price</h1>
 								<h1>BSC Circulation</h1>
 							</div>
-							<section className="flex flex-col md:flex-row gap-8 mb-8">
+							<section className="flex flex-col md:flex-row gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 w-full max-w-full overflow-hidden">
 								{/* Left: GRV Price Chart */}
-								<div className="flex-1 bg-[#020827] rounded-xl p-6  flex flex-col justify-between -ml-6">
+								<div className="flex-1 bg-[#020827] rounded-xl p-3 sm:p-4 lg:p-6 flex flex-col justify-between w-full max-w-full overflow-hidden">
 									<div>
 										<div className="text-[#7b7f92] text-lg mb-2">
 											GRV / USD
@@ -1076,11 +1076,11 @@ function App() {
 									<div className="flex-1 flex flex-row justify-end mt-4 relative">
 										{/* Y-axis numbers */}
 
-										<div className="h-120 w-full bg-gradient-to-b from-primary/30 to-transparent rounded-lg flex items-end relative overflow-hidden">
+										<div className="h-32 sm:h-48 lg:h-120 w-full bg-gradient-to-b from-primary/30 to-transparent rounded-lg flex items-end relative overflow-hidden">
 											<img
 												src={chartImages[chartRange]}
 												alt={`GRV/USD Chart ${chartRange}`}
-												className="absolute inset-0 w-full h-120 object-fit"
+												className="absolute inset-0 w-full h-full object-cover"
 											/>
 										</div>
 									</div>
@@ -1099,8 +1099,8 @@ function App() {
 									</button>
 								</div>
 								{/* Right: Circulation Charts */}
-								<div className="flex flex-col gap-8 flex-1 -ml-6 -mr-6">
-									<div className="bg-[#020827] rounded-xl p-2 pt-6">
+								<div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 flex-1 w-full max-w-full overflow-hidden">
+									<div className="bg-[#020827] rounded-xl p-2 sm:p-3 lg:p-4 pt-4 sm:pt-6 w-full max-w-full overflow-hidden">
 										<div className="text-gray-300 text-lg mb-8 pl-8 font-bold">
 											BSC / GRV
 										</div>
@@ -1108,7 +1108,7 @@ function App() {
 										<img
 											src={chartImg2}
 											alt="GRV/USD Chart"
-											className="w-full h-58 object-contain rounded-lg"
+											className="w-full h-32 sm:h-40 lg:h-58 object-contain rounded-lg"
 											style={{ position: 'static' }}
 										/>
 									</div>
@@ -1124,7 +1124,7 @@ function App() {
 										<img
 											src={chartImg3}
 											alt="GRV/USD Chart"
-											className="w-full h-58 object-contain rounded-lg"
+											className="w-full h-32 sm:h-40 lg:h-58 object-contain rounded-lg"
 											style={{ position: 'static' }}
 										/>
 									</div>
@@ -1145,8 +1145,8 @@ function App() {
 									See All Staked Assets <span>↗</span>
 								</a>
 							</div>
-							<section className="bg-[#020827] rounded-xl p-6 mb-8">
-								<div className="overflow-x-auto">
+							<section className="bg-[#020827] rounded-xl p-3 sm:p-4 lg:p-6 mb-6 sm:mb-8 w-full max-w-full">
+								<div className="overflow-x-auto -mx-3 sm:-mx-4 lg:-mx-6 px-3 sm:px-4 lg:px-6">
 									<table className="min-w-full text-left">
 										<thead>
 											<tr className="text-gray-400 text-xs">
@@ -1225,8 +1225,8 @@ function App() {
 									Go to GROVE Swap <span>↗</span>
 								</a>
 							</div>
-							<section className="bg-[#020827] rounded-xl p-8 mb-8">
-								<div className="flex flex-col md:flex-row gap-6">
+							<section className="bg-[#020827] rounded-xl p-3 sm:p-4 lg:p-8 mb-6 sm:mb-8 w-full max-w-full overflow-hidden">
+								<div className="flex flex-col md:flex-row gap-3 sm:gap-4 lg:gap-6">
 									{/* First input with label beside */}
 									<div className="flex-1 flex items-center gap-3 relative">
 										<button
