@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "groove-frontend"
-  }
+    "default": "dapps-grove",
+    "production": "dapps-grove"
+  },
+  "targets": {},
+  "etags": {}
 }

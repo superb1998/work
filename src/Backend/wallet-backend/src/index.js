@@ -12,7 +12,13 @@ app.use(helmet());
 
 // CORS configuration for production
 const corsOptions = {
-  origin: ['https://groove-frontend.web.app', 'https://groove-frontend.firebaseapp.com', 'http://localhost:5173'],  // Production and development URLs
+  origin: [
+    'https://dapps-grove.web.app',
+    'https://dapps-grove.firebaseapp.com',
+    'https://groove-frontend.web.app', // Keep old URL during transition
+    'https://groove-frontend.firebaseapp.com',
+    'http://localhost:5173'
+  ],  // Production and development URLs
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
