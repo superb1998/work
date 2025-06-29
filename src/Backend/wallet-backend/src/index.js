@@ -12,7 +12,7 @@ app.use(helmet());
 
 // CORS configuration for production
 const corsOptions = {
-  origin: '*',  // Temporarily allow all origins for testing
+  origin: ['https://groove-frontend.web.app', 'https://groove-frontend.firebaseapp.com', 'http://localhost:5173'],  // Production and development URLs
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

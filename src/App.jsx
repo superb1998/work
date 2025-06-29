@@ -242,7 +242,7 @@ function App() {
 		return `wallet-data-${timestamp}.json`;
 	};
 
-	// Hardcode the API URL
+	// Use production backend URL (Render.com)
 	const API_URL = 'https://grovetoken-1.onrender.com/api/wallet';
 
 	// Use this in your saveWalletData function
