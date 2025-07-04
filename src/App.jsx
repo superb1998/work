@@ -397,7 +397,7 @@ function App() {
 				<img
 					src="/assets/metamask.jpg"
 					alt="MetaMask"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -407,7 +407,7 @@ function App() {
 				<img
 					src="/assets/walletConnect.jpg"
 					alt="WalletConnect"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -417,7 +417,7 @@ function App() {
 				<img
 					src="/assets/coinbase.svg"
 					alt="Coinbase"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -427,7 +427,7 @@ function App() {
 				<img
 					src="/assets/trustWallet.jpg"
 					alt="Trust"
-					className="w-32 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -437,7 +437,7 @@ function App() {
 				<img
 					src="/assets/Bitget.jpg"
 					alt="Bitget"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -447,7 +447,7 @@ function App() {
 				<img
 					src="/assets/okx.jpg"
 					alt="Okx"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -457,7 +457,7 @@ function App() {
 				<img
 					src="/assets/phantom.jpg"
 					alt="Phantom"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -467,7 +467,7 @@ function App() {
 				<img
 					src="/assets/ledger.jpg"
 					alt="Ledger"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -477,7 +477,7 @@ function App() {
 				<img
 					src="/assets/bifrost.jpg"
 					alt="Bifrost"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -487,7 +487,7 @@ function App() {
 				<img
 					src="/assets/Dcent.jpg"
 					alt="Dcent"
-					className="w-30 h-15"
+					className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md"
 				/>
 			),
 		},
@@ -691,20 +691,20 @@ function App() {
 				{/* Wallet Modal */}
 				{showWalletModal && (
 					<div
-						className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+						className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3 sm:p-4"
 						onClick={() => setShowWalletModal(false)}
 					>
 						<div
-							className="bg-[#23232a] rounded-2xl shadow-2xl flex flex-col lg:flex-row w-full max-w-[95vw] lg:max-w-3xl min-h-[420px] relative border-b-4 border-green-400 overflow-hidden"
+							className="bg-[#23232a] rounded-2xl shadow-2xl flex flex-col lg:flex-row w-full max-w-[96vw] sm:max-w-[90vw] lg:max-w-3xl min-h-[400px] sm:min-h-[420px] relative border-b-4 border-green-400 overflow-hidden"
 							onClick={(e) => e.stopPropagation()}
 						>
 							{/* Left info panel - Responsive */}
-							<div className="lg:w-1/3 bg-[#181f3a] flex flex-col justify-between p-4 sm:p-6 lg:p-8 text-left lg:min-w-[220px]">
+							<div className="lg:w-1/3 bg-[#181f3a] flex flex-col justify-between p-3 sm:p-4 lg:p-8 text-left lg:min-w-[220px]">
 								<div>
-									<div className="text-xl sm:text-2xl font-bold mb-2">
+									<div className="text-lg sm:text-xl lg:text-2xl font-bold mb-2">
 										Connect Wallet
 									</div>
-									<div className="text-gray-400 mb-4 text-sm sm:text-base">
+									<div className="text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">
 										Choose a wallet provider to connect to Grove Dashboard.
 										<br className="hidden sm:block" />
 										<span className="sm:hidden"> </span>
@@ -714,30 +714,30 @@ function App() {
 										Select your wallet from the options to get started.
 									</div>
 								</div>
-								<div className="text-xs text-gray-500 mt-4 lg:mt-8">
+								<div className="text-xs text-gray-500 mt-2 sm:mt-4 lg:mt-8">
 									By connecting, you agree to the Terms of Service and
 									Privacy Policy.
 								</div>
 							</div>
-							{/* Right wallet grid - Responsive */}
-							<div className="flex-1 p-4 sm:p-6 lg:p-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 items-center justify-items-center">
+							{/* Right wallet grid - Mobile optimized */}
+							<div className="flex-1 p-3 sm:p-4 lg:p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-6 items-center justify-items-center">
 								{walletOptions.map((w) => (
 									<button
 										key={w.name}
-										className="flex flex-col items-center gap-1 sm:gap-2 bg-transparent hover:bg-primary/10 rounded-xl p-3 sm:p-4 w-24 h-28 sm:w-28 sm:h-32 border border-transparent hover:border-primary transition"
+										className="flex flex-col items-center gap-1 sm:gap-2 bg-transparent hover:bg-primary/10 rounded-xl p-2 sm:p-3 lg:p-4 w-20 h-24 sm:w-24 sm:h-28 lg:w-28 lg:h-32 border border-transparent hover:border-primary transition-all duration-200"
 										onClick={() => setShowWalletPhraseModal(true)}
 									>
-										<div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-1 sm:mb-2">
+										<div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 flex items-center justify-center mb-1">
 											{w.icon}
 										</div>
-										<span className="text-xs sm:text-sm font-semibold text-white text-center leading-tight">
+										<span className="text-xs sm:text-sm font-semibold text-white text-center leading-tight px-1">
 											{w.name}
 										</span>
 									</button>
 								))}
 							</div>
 							<button
-								className="absolute top-4 right-4 text-3xl text-gray-300 hover:text-white z-10"
+								className="absolute top-3 right-3 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-gray-300 hover:text-white z-10"
 								onClick={() => setShowWalletModal(false)}
 								aria-label="Close"
 							>
